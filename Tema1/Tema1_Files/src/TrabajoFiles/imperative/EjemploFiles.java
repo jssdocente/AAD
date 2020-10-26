@@ -14,21 +14,27 @@ public class EjemploFiles {
     public static void main(String[] args) {
         String filename = "palabras.txt";
 
-        readAllLinesines(filename);
+        readAllLinesines("palabras.txt");  //ruta relativa, es como si ponemos ./palabras.txt.
+        readAllLinesines("./palabras.txt");  //ruta relativa, es como si ponemos ./palabras.txt.
         ListaFicheros();
     }
 
     public static void readAllLinesines(String filename) {
 
         System.out.println("Reading File from Java code");
-        //Name of the file
-        String fileName = filename;
 
-        //URL res = Ejempo1.class.getResource("/resources/palabras.txt");
+
+        /* Opciones para indicar la ruta.
+        * ruta relativa desde la ubicación de la clase: Ejempo1.class.getResource("/resources/palabras.txt");
+        * ruta relativa, pero delegamos la ubicación en el fichero pasado como parámetro.
+        *        De este forma, java busca desde la raiz del proyecto /src/...
+        *
+        * ruta absoluta: Se incluye la ruta completa. NUNCA
+        * */
         try {
 
             //Create object of FileReader
-            FileReader inputFile = new FileReader(fileName);
+            FileReader inputFile = new FileReader(filename);
 
             //Instantiate the BufferedReader Class
             BufferedReader bufferReader = new BufferedReader(inputFile);
@@ -42,10 +48,6 @@ public class EjemploFiles {
 
                 String[] words = line.split(" ");
 
-                //con strems => programacion funcional
-                Arrays.stream(words).forEach(s -> System.out.println(s));
-
-                //forma imperativa
                 for (String word: words) {
                     System.out.println(word);
                 }
@@ -65,6 +67,7 @@ public class EjemploFiles {
     public static void ListaFicheros() {
 
         File f = new File(".");
+
         for (File file: f.listFiles()) {
             if (file.isFile()) {
                 System.out.println(file.getName());

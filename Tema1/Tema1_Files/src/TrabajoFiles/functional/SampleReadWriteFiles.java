@@ -1,12 +1,11 @@
 package TrabajoFiles.functional;
 
-import javax.swing.plaf.OptionPaneUI;
+import TrabajoFiles.functional.util.FilesUtil;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.List;
 
 public class SampleReadWriteFiles {
 

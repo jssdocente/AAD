@@ -1,4 +1,4 @@
-package TrabajoFiles.functional;
+package TrabajoFiles.functional.util;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,8 +10,7 @@ import java.util.List;
 public class FilesUtil {
 
     public static String readTextFile(String fileName) throws IOException {
-        String content = new String(Files.readAllBytes(Paths.get(fileName)));
-        return content;
+        return new String(Files.readAllBytes(Paths.get(fileName)));
     }
 
     public static List<String> readTextFileByLines(String fileName) throws IOException {

@@ -1,8 +1,7 @@
-package Textfiles;
+package TextFiles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.URL;
 import java.util.Arrays;
 
 public class Ejempo1 {

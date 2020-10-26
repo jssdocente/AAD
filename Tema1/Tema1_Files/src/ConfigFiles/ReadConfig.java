@@ -1,9 +1,8 @@
-package Configfiles;
+package ConfigFiles;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class ReadConfig {
 
