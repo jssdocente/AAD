@@ -7,6 +7,9 @@ El repositorio del módulo es:  [Repositorio](https://github.com/jssdocente/AAD/
 
 En este repositorio iré colgando a lo largo del curso, los siguientes temas y ejercicios, por lo que a la vez que vamos viendo temas, en paralelo también trabajamos con GIT.
 
+Para trabajar con GIT, inicialmente, lo haremos desde un programa para facilitar su uso. Si no tenéis ninguno o recomiendo por ahora, [GITHUB Desktop](https://desktop.github.com/), ya que es muy sencillito.
+Más adelante, utilizaremos otros, como [SourceTree](https://www.sourcetreeapp.com/) o [SmartGit](https://www.syntevo.com/smartgit/).
+
 ## Tema 1. Material disponible
 
 Para este tema de ficheros disponéis de bastantes recursos colgados en classroom.
