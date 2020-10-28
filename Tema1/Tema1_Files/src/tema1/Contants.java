@@ -1,40 +1,43 @@
 package tema1;
 
-public class Contants {
-    public class Flujos {
-        public class In {
-            public static final String pathbase = "./res/flujos/in";
-        }
-        public class Out {
-            public static final String pathbase = "./res/flujos/out";
-        }
-    }
-    public class ClaseFile {
-        public static final String pathbase = "./res/claseFile";
-    }
-    public class ClaseFiles {
-        public static final String pathbase = "./res/claseFiles/";
-    }
-    public class ClasePath {
-        public static final String pathbase = "./res/clasePath";
-    }
-    public class nioApiStream {
-        public static final String pathbase = "./res/nioApiStream";
-    }
-    public class Ejemplos {
-        public class Practica {
-            public static final String pathbase = "./res/_ejemplos/practica/";
+import java.io.File;
+import java.nio.file.Paths;
 
-            public class Funcional {
-                public static final String pathbase = "./res/_ejemplos/practica/functional";
+public class Contants {
+    public static class Flujos {
+        public static class In {
+            public static final String pathbase = Paths.get(".","res","flujos","in").toString();
+        }
+        public static class Out {
+            public static final String pathbase = Paths.get(".","res","flujos","out").toString();
+        }
+    }
+    public static class ClaseFile {
+        public static final String pathbase = Paths.get(".","res","flujos","claseFile").toString();
+    }
+    public static class ClaseFiles {
+        public static final String pathbase = Paths.get(".","res","flujos","claseFiles").toString();
+    }
+    public static class ClasePath {
+        public static final String pathbase = Paths.get(".","res","clasePath").toString();
+    }
+    public static class nioApiStream {
+        public static final String pathbase = Paths.get(".","res","nioApiStream").toString();
+    }
+    public static class Ejemplos {
+        public static class Practica {
+            public static final String pathbase = Paths.get(".","res","_ejemplos","practica").toString();
+
+            public static class Funcional {
+                public static final String pathbase = Paths.get(".","res","_ejemplos","practica","functional").toString();
             }
-            public class Imperative {
-                public static final String pathbase = "./res/_ejemplos/practica/imperative/";
+            public static class Imperative {
+                public static final String pathbase = Paths.get(".","res","_ejemplos","practica","imperative").toString();
             }
         }
-        public class Real {
-            public class ServicioMeteorologico {
-                public static final String pathbase = "./res/_ejemplos/real/servicio_meteorologico/";
+        public static class Real {
+            public static class ServicioMeteorologico {
+                public static final String pathbase = Paths.get(".","res","_ejemplos","real","servicio_meteorologico").toString();
             }
         }
 
