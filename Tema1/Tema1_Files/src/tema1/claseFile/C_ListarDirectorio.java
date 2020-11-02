@@ -19,10 +19,15 @@ public class C_ListarDirectorio {
      * @param args
      */
     public static void main(String[] args) {
-
+        
         String path = Paths.get(Contants.ClaseFile.pathbase, "nuevo.txt").toString();
         File f = new File(path);
 
+        if (!f.isDirectory()) {
+            System.err.println("No es un directorio");
+            return;
+        }
+        
         if (f.isDirectory()) {
             //Manejando la lista como String[]
             System.out.println("Como lista de String");
