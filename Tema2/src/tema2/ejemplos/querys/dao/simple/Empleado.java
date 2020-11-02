@@ -6,7 +6,7 @@ package tema2.ejemplos.querys.dao.simple;
 import java.time.LocalDate;
 
 /**
- * @author Openwebinars
+ * @author Jesus Garcia
  *
  */
 public class Empleado {

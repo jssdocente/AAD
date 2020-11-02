@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Openwebinars
+ * @author Jesus Garcia
  *
  */
 public class DaoEmpleados {

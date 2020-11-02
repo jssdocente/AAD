@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
 /**
- * @author Openwebinars
+ * @author Jesus Garcia
  *
  */
 public class EjemploSelect {
@@ -44,7 +44,7 @@ public class EjemploSelect {
 				java.sql.Date fechaNacimiento = rs.getDate("fecha_nacimiento"); //equivalente a rs.getDate(3);
 				LocalDate fechaNacimientoLD = fechaNacimiento.toLocalDate();				
 				float sueldo = rs.getFloat("sueldo"); //equivalente a rs.getFloat(4);
-				System.out.printf("%s %s\t\t (%s) - %.2f� %n", nombre, apellidos, 
+				System.out.printf("%s %s\t\t (%s) - %.2f %n", nombre, apellidos,
 						fechaNacimientoLD.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)),
 						sueldo);
 			}

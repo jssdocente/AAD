@@ -14,7 +14,7 @@ import javax.sql.rowset.RowSetFactory;
 import javax.sql.rowset.RowSetProvider;
 
 /**
- * @author Openwebinars
+ * @author Jesus Garcia
  *
  */
 public class EjemploCachedRowSet {
