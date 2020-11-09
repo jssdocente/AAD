@@ -21,8 +21,8 @@ public class CopyBytes {
 			System.err.println("Error de sintaxis. Se necesitan dos argumentos");
 			return;
 		}
-		
-		
+
+
 		BufferedInputStream bin = null;
 		BufferedOutputStream bout = null;
 
@@ -47,7 +47,10 @@ public class CopyBytes {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		finally {
 			if (bin != null)
 				try {
 					bin.close();
