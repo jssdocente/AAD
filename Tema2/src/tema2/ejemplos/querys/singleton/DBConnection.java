@@ -23,13 +23,26 @@ public class DBConnection {
 	public static Connection getConnection() throws SQLException {
 		if (instance == null) {
 			Properties props = new Properties();
-			props.put("user", "user");
-			props.put("password", "p@ssw0rd");
-			instance = DriverManager.getConnection(JDBC_URL, props);
+			props.put("user", readConfig("user"));
+			props.put("password", readConfig("pass"));
+			instance = DriverManager.getConnection(generateUrl(), props);
 		}
 		
 		return instance;
 	}
-	
 
+
+	private static String generateUrl() {
+
+		String server= tema2.ejemplos.config.ConfigUtil.readProperty("","server");
+		String db= tema2.ejemplos.config.ConfigUtil.readProperty("","db");
+		String port= tema2.ejemplos.config.ConfigUtil.readProperty("","port");
+
+		return String.format("jdbc:mysql://%s:%s/%s",server,port,db);
+
+	}
+
+	private static String readConfig(String propname) {
+		return  tema2.ejemplos.config.ConfigUtil.readProperty("",propname);
+	}
 }

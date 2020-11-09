@@ -3,6 +3,8 @@
  */
 package tema2.ejemplos.conexion.ejemplojdbc;
 
+import tema2.ejemplos.querys.singleton.DBConnection;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,9 +22,11 @@ public class EjemploConexion {
         Connection con = null;
         // Usamos un objeto de properties para pasar
         // de una manera más cómoda el user, password
-        Properties props = new Properties();
-        props.put("user", "user");
-        props.put("password", "p@ssw0rd");
+        //Properties props = new Properties();
+        //props.put("user", "user");
+        //props.put("password", "p@ssw0rd");
+        //props.put("user", "root");
+        //props.put("password", "root");
 
         try {
             // Si trabajaramos con JDBC < 4.0 tendríamos que indicar esta línea
@@ -30,10 +34,11 @@ public class EjemploConexion {
             // Class.forName("com.mysql.jdbc.Driver");
 
             // Obtenemos la conexión a partir de la URL jdbc correspondiente
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_demo1", props);
+            //con = DriverManager.getConnection("jdbc:mysql://localhost:8889/jdbc_ex2", props);
 
-            // Estas próximas líneas las trabajaremos ampliamente
-            // en el siguiente capítulo
+            con = DBConnection.getConnection();
+
+            // Estas próximas líneas las trabajaremos ampliamente en el siguiente capítulo
 
             // Creamos el objeto para enviar sentencias
             Statement st = con.createStatement();
