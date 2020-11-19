@@ -1,26 +1,42 @@
 package tema2.ejemplos.querys.dao.extendido;
 
-public class ProductManager {
+public class ProductManager_Config {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        ProductDAO product = new ProductDAOmsql();
+        ProductDAO product = null;
 
-        // agregar nuevo producto
-        product.insert(new ProductDTO(100, "Arroz", 1.50));
+        //Leemos la configuracion, para ver qué Implementación cargar
+        String dbuse = ProductManagerConfig.readConfig("dao_db");
 
-        // obtener el producto con ID = 100
-        ProductDTO p = product.read(100);
-        System.out.println(p);
+        if (dbuse.equalsIgnoreCase("mariadb"))
+            product = new ProductDAOmdb();
+        else if (dbuse.equalsIgnoreCase("mysql"))
+            product = new ProductDAOmdb();
+        else
+            throw new Exception("Implmentación de Producto no encontrada");
 
-        // eliminar el producto con ID = 100
-        product.delete(100);
+        try {
+            // agregar nuevo producto
+            product.insert(new ProductDTO(100, "Arroz", 1.50));
+
+            // obtener el producto con ID = 100
+            ProductDTO p = product.read(100);
+            System.out.println(p);
+
+            // eliminar el producto con ID = 100
+            product.delete(100);
+
+        } catch (Exception ex) {
+            System.out.println("Errores en el procesamiento");
+            ex.printStackTrace();
+        }
     }
 
-    private static class Config {
+    private static class ProductManagerConfig {
 
         public static String readConfig(String propname) {
-            return  tema2.ejemplos.config.ConfigUtil.readProperty("",propname);
+            return tema2.ejemplos.config.ConfigUtil.readProperty("", propname);
         }
 
     }
