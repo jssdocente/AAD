@@ -1,12 +1,12 @@
 package tema2.ejemplos.querys.dao.extendido;
 
-public class Product {
+public class ProductDTO {
 
     private Integer id;
     private String name;
     private Double price;
 
-    public Product(Integer id, String name, Double price) {
+    public ProductDTO(Integer id, String name, Double price) {
         this.id = id;
         this.name = name;
         this.price = price;
