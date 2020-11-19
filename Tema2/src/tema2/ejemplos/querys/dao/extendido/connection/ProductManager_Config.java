@@ -1,4 +1,4 @@
-package tema2.ejemplos.querys.dao.extendido;
+package tema2.ejemplos.querys.dao.extendido.connection;
 
 public class ProductManager_Config {
 
@@ -36,7 +36,7 @@ public class ProductManager_Config {
     private static class ProductManagerConfig {
 
         public static String readConfig(String propname) {
-            return tema2.ejemplos.config.ConfigUtil.readProperty("", propname);
+            return tema2.ejemplos.config.ConfigUtil.readProperty("config_dao.properties", propname);
         }
 
     }
