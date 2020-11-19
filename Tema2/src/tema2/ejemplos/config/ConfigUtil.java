@@ -12,7 +12,7 @@ public class ConfigUtil {
         String result ="";
         Properties prop = new Properties();
 
-        String propfileValue = propfile != "" ? propfile : "config.properties";
+        String propfileValue = propfile != "" ? propfile : "config_ejemplos.properties";
 
         Path path = Paths.get(".","res","config",propfileValue);
         if (!path.toFile().exists()) {

@@ -14,7 +14,7 @@ import java.util.Properties;
  */
 public class DBConnection {
 	
-	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/jdbc_demo1";
+	private static final String JDBC_URL = "jdbc:mysql://localhost:3306/jdbc_demo";
 	
 	private static Connection instance = null;
 	
