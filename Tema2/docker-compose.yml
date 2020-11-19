@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+#  postgres:
+#    image: postgres
+#    volumes:
+#      - ./res/db/pgss:/var/lib/postgresql/data
+#    ports:
+#      - 5432:5432
+#    env_file:
+#      - ./res/config/dbpgss.env
+
+#  hsqldb:
+#    image: blacklabelops/hsqldb
+#    container_name: hsqldb
+#    volumes:
+#      - ./res/db/hsqldb:/opt/database
+#    ports:
+#      - 9001:9001
+#    env_file:
+#      - ./res/config/hsqldb.env
+
+  mariadb:
+    image: mariadb:10.2
+    container_name: mariadb-10.2
+#    logging:
+#      driver: syslog
+#      options:
+#        tag: "{{.DaemonName}}(image={{.ImageName}};name={{.Name}};id={{.ID}})"
+    restart: on-failure
+    volumes:
+      - ./res/db/mariadb:/var/lib/mysql
+#    env_file:
+#      - ./res/config/mariadb.env
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: jdbc_demo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: p@ssw0rd
+
+  mysqldb:
+    image: mysql:5.6
+    container_name: mysql-5.6
+    restart: always
+    volumes:
+      - ./res/db/mysqldb:/var/lib/mysql
+    #    env_file:
+    #      - ./res/config/mariadb.env
+    ports:
+      - 3308:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: jdbc_demo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: p@ssw0rd
