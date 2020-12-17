@@ -16,6 +16,11 @@
 
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
+### Intellj ###
+
+**/.idea/
+**/*.iml
+
 ### Eclipse ###
 
 .metadata
