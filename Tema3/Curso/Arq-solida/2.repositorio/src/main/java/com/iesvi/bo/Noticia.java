@@ -77,6 +77,11 @@ public class Noticia implements Serializable {
 		this.comentarios = comentarios;
 	}
 
+
+	public static Noticia from(Noticia noticia) {
+		return new Noticia(noticia.id, noticia.titulo, noticia.autor, noticia.fecha);
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

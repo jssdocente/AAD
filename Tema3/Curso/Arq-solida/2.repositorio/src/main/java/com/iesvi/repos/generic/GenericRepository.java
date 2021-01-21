@@ -6,7 +6,7 @@ public interface GenericRepository<T,K> {
 
 	public T findOne(K numero);
 	public Iterable<T> findAll();
-	public void save(T comentario);
-	public void delete(T comentario);
+	public T save(T entidad);
+	public void delete(T entidad);
 
 }
