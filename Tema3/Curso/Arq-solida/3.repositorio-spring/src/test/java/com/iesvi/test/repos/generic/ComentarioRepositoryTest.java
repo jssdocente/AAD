@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class ComentarioReposotoryTest extends JPAUnitTest {
+public class ComentarioRepositoryTest extends JPAUnitTest {
 
     ComentarioRepositoryJPA repo;
     NoticiaRepositoryJPA repoNotice;

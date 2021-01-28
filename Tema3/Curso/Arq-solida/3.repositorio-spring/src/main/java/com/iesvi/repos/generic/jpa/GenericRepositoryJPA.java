@@ -1,15 +1,21 @@
 package com.iesvi.repos.generic.jpa;
 
 import com.iesvi.repos.generic.GenericRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-public class GenericRepositoryJPA<T,K> implements GenericRepository<T,K> {
+@Repository
+public abstract class GenericRepositoryJPA<T,K> implements GenericRepository<T,K> {
 
+    @PersistenceContext
     private EntityManager em;
 
     private Class<T> type;
@@ -38,12 +44,15 @@ public class GenericRepositoryJPA<T,K> implements GenericRepository<T,K> {
         return queryExecute.getResultList();
     }
 
+    @Transactional
     public T save(T tipo) {
         em.persist(tipo); //vemos como acepta sin problema el tipo generico
         return tipo;
     }
 
-    public void delete(T tipo) {
+    @Transactional
+    public void delete(T tipo)
+    {
         em.remove(tipo); //vemos como acepta sin problema el tipo generico
     }
 }

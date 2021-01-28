@@ -1,4 +1,4 @@
-package com.iesvi.test.services;
+package com.iesvi.test.services.unit;
 
 import com.iesvi.bo.Noticia;
 import com.iesvi.dto.NoticiaDto;

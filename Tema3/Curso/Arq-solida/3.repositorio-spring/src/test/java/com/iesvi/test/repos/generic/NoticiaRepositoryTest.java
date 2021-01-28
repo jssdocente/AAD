@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class NoticiaReposotoryTest extends JPAUnitTest {
+public class NoticiaRepositoryTest extends JPAUnitTest {
 
     NoticiaRepositoryJPA repo;
     private Noticia newnotice;

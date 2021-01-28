@@ -4,12 +4,18 @@ import com.iesvi.bo.Comentario;
 import com.iesvi.bo.Noticia;
 import com.iesvi.dto.*;
 import com.iesvi.repos.generic.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class NoticiaServicio {
 
+    @Autowired
     NoticiaRepository noticiaRepo;
+    @Autowired
     ComentarioRepository commentRepo;
 
     public void setNoticiaRepo(NoticiaRepository noticiaRepo) {
@@ -20,6 +26,7 @@ public class NoticiaServicio {
         this.commentRepo = commentRepo;
     }
 
+    @Transactional
     public Noticia createNoticia(NoticiaDto noticedto) {
 
         //Crear Noticia-entity desde noticia-dto (por ahora lo creamos manualmente)
@@ -32,6 +39,7 @@ public class NoticiaServicio {
         return noticiaRepo.findOne(id);
     }
 
+    @Transactional
     public void update(NoticiaDto noticedto) throws Exception {
 
         Noticia nbd = noticiaRepo.findOne(noticedto.getId());
@@ -44,6 +52,7 @@ public class NoticiaServicio {
         noticiaRepo.save(updnotice);
     }
 
+    @Transactional
     public void createNoticiaWithCommentsIsolated(Noticia noticia, List<Comentario> comentarios) {
 
         noticiaRepo.save(noticia);
@@ -54,6 +63,7 @@ public class NoticiaServicio {
         }
     }
 
+    @Transactional
     public void createNoticiaWithComments(Noticia noticia, List<Comentario> comentarios) {
 
         //Agregamos todos los comentario, a la noticia antes de guardar la noticia, y la noticia se encarga de persistir los comentarios.
