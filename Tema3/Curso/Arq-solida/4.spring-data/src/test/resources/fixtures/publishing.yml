@@ -1,0 +1,20 @@
+# test/resources/fixtures/publishing.yml
+
+noticia: &noticia
+  id: ${faker.number.numberBetween(2,1000)}
+  titulo: ${faker.book.title}
+  autor: ${faker.artist.name}
+  fecha: ${faker.date.between('2010-01-01', '2022-01-01')}
+
+noticiadto: &noticiadto
+  id: ${faker.number.numberBetween(2,1000)}
+  titulo: ${faker.book.title}
+  autor: ${faker.artist.name}
+  fecha: ${faker.date.between('2010-01-01', '2022-01-01')}
+
+comentario:
+  id: ${sequence.number}
+  name: Ernest Hemingway
+  introduction: ${faker.lorem.paragraph}
+  birth: July 21, 1899
+  gender: MALE
