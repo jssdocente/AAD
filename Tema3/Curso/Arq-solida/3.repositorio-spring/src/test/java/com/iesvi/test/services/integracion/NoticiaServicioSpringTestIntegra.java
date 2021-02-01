@@ -1,11 +1,11 @@
 package com.iesvi.test.services.integracion;
 
 import com.iesvi.bo.Noticia;
-import com.iesvi.config.ConfigurationSpring;
 import com.iesvi.dto.NoticiaDto;
 import com.iesvi.repos.generic.*;
 import com.iesvi.repos.generic.jpa.NoticiaRepositoryJPA;
 import com.iesvi.services.NoticiaServicio;
+import com.iesvi.test.config.ConfiguracionSpringTest;
 import com.iesvi.test.shared.domain.builder.NoticiaBuilder;
 import com.iesvi.test.shared.domain.builder.dto.NoticiaDtoMother;
 import org.junit.Assert;
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ConfigurationSpring.class)
+@ContextConfiguration(classes = ConfiguracionSpringTest.class)
 public class NoticiaServicioSpringTestIntegra {
 
     @Autowired
