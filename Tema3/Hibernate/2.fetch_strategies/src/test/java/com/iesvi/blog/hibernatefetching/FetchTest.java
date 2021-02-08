@@ -1,4 +1,4 @@
-package com.danielme.blog.hibernatefetching;
+package com.iesvi.blog.hibernatefetching;
 
 import com.iesvi.blog.hibernatefetching.entities.*;
 import org.apache.logging.log4j.LogManager;
