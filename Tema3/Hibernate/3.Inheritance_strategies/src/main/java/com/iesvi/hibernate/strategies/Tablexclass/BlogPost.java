@@ -1,0 +1,12 @@
+package com.iesvi.hibernate.strategies.Tablexclass;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity(name = "BlogPost")
+public class BlogPost extends Publication {
+
+    @Column
+    private String url;
+    
+}
